@@ -77,6 +77,9 @@
             },
             "development": {
               "buildTarget": "counterNGRX-4:build:development"
+            },
+            "options": {
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -108,3 +111,6 @@
     }
   }
 }
+
+
+
