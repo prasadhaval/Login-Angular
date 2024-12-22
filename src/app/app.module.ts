@@ -15,6 +15,8 @@ import { isDevMode } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './component/store/app.state';
+import { PostDataComponent } from './component/dashbord/about/post-data/post-data.component';
+import { UpdateDataComponent } from './component/dashbord/about/update-data/update-data.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { appReducer } from './component/store/app.state';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    HeaderComponent
+    HeaderComponent,
+    PostDataComponent,
+    UpdateDataComponent
   ],
   imports: [
     BrowserModule,

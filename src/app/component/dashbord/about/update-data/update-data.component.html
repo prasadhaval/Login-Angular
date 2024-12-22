@@ -1,0 +1,13 @@
+<form [formGroup]="editeForm" (ngSubmit)="editeFun()">
+    <div class="form-group mb-2">
+        <label for="title">title</label>
+        <input type="text" name="" id="title" class="form-control" formControlName="title">
+    </div>
+    <div class="form-group mb-2">
+        <label for="dis">dis</label>
+        <input type="text" name="" id="dis" class="form-control" formControlName="dis">
+    </div>
+    <div class="form-group mb-2">
+        <button class="btn btn-sm btn-info">Update</button>
+    </div>
+</form>
