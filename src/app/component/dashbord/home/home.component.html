@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="row">
+    <div class="col-6">
+        <h3>{{countervalue | async}}</h3>
+        <input type="text" name="" id="" class="form-control" [(ngModel)]="inputvalue">
+    </div>
+    <div class="col-6">
+        <button class="btn btn-sm btn-success" (click)="onincriment()">Incriment</button>
+        <button class="btn btn-sm btn-warning" (click)="ondecriment()">Decriment</button>
+        <button class="btn btn-sm btn-info" (click)="onreset()">Reset</button>
+        <button class="btn btn-sm btn-dark" (click)="onAdd()">Add</button>
+    </div>
+</div>
