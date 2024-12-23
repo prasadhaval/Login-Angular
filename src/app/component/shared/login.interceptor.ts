@@ -6,7 +6,7 @@ export const loginInterceptor: HttpInterceptorFn = (req, next) => {
       auth : `baarer`
     }
   })
-  return next(req);
+  return next(newCloneReq);
 };
 
 
