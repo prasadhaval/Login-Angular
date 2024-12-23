@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { LogininitialStateInterface } from './store/login.state';
+import { LoginStartAction } from './store/login.action';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +15,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-  constructor(private http : HttpClient){}
-
-  private loginapi =   'https://freeapi.miniprojectideas.com/api/User/Login'
-
+  constructor(private stote : Store<LogininitialStateInterface>){}
   ngOnInit(): void {
     
     this.loginForm = new FormGroup({
@@ -26,15 +26,10 @@ export class LoginComponent implements OnInit {
 
 
   loginFun(){
-    let obj = {
-      EmailId : this.loginForm.value.EmailId,
-      Password : this.loginForm.value.Password,
-    }
+   const email  = this.loginForm.value.EmailId
+   const Password  = this.loginForm.value.Password
 
-    const headers = {'auth':'application/json'}
-    this.http.post(this.loginapi,obj,{headers}).subscribe((data : any)=>{
-      console.log(data)
-    })
+   this.stote.dispatch(LoginStartAction({email:email , password : Password}))
   }
   
 

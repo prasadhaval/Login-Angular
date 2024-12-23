@@ -17,6 +17,8 @@ import { StoreModule } from '@ngrx/store';
 import { appReducer } from './component/store/app.state';
 import { PostDataComponent } from './component/dashbord/about/post-data/post-data.component';
 import { UpdateDataComponent } from './component/dashbord/about/update-data/update-data.component';
+import { EffectsModule } from '@ngrx/effects';
+import { LoginEffects } from './component/login/store/login.effects';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { UpdateDataComponent } from './component/dashbord/about/update-data/upda
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot([LoginEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: !isDevMode(), // Restrict extension to log-only mode
