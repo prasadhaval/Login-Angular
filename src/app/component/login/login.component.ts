@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { LogininitialStateInterface } from './store/login.state';
 import { LoginStartAction } from './store/login.action';
+import { LOADING_ACTION } from '../loader/store/loader.action';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
   loginFun(){
    const email  = this.loginForm.value.EmailId
    const Password  = this.loginForm.value.Password
-
+    this.stote.dispatch(LOADING_ACTION({loader : true}))
    this.stote.dispatch(LoginStartAction({email:email , password : Password}))
   }
   
