@@ -1,1 +1,5 @@
+<app-loader *ngIf="isLoader | async"></app-loader>
+<div class="alert alert-danger" role="alert" *ngIf="isError | async as error">
+    {{error}}
+  </div>
 <router-outlet></router-outlet>

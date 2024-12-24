@@ -7,6 +7,7 @@ import { AboutComponent } from './component/dashbord/about/about.component';
 import { ContactComponent } from './component/dashbord/contact/contact.component';
 import { PostDataComponent } from './component/dashbord/about/post-data/post-data.component';
 import { UpdateDataComponent } from './component/dashbord/about/update-data/update-data.component';
+import { SignupComponent } from './component/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path :'login', component : LoginComponent
+  },
+  {
+    path :'signup', component : SignupComponent
   },
   {
     path :'', component : DashbordComponent , children :[

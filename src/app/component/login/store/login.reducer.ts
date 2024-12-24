@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store"
 import { LogininitialState } from "./login.state"
-import { LoginSuccessAction } from "./login.action"
+import { LoginFaileAction, LoginSuccessAction } from "./login.action"
 
 const _LoginReducer = createReducer(LogininitialState,
 
@@ -8,6 +8,13 @@ const _LoginReducer = createReducer(LogininitialState,
         return {
             ...state,
             User : action.user
+        }
+    }),
+
+    on(LoginFaileAction , (state,action)=>{
+        return {
+            ...state,
+            errorMessage : action.errorMessage
         }
     })
 )
